@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skeletal UI Grid Table</title>
+  <link rel="stylesheet" href="../static/new.css">
+</head>
+<body>
+  <div class="header">
+    <div style=" display: flex; justify-content: left;">
+    <img src="../static/salesforce.png" alt="salesforce" width="90" height="90" style="margin-right: 10px;">
+    <h1 style="color: white; font-weight: 900;">Org Details</h1></div>
+    <p style="color: white; font-weight: 600; font-size: larger;">Username: {{username}}</p>
+  </div>
+  <div class="outline-all-container">
+    <div class="button-container">
+  <button class="grid-button" onclick="gridClick()">Grid</button>
+  <button class="table-button" onclick="tableClick()">Table</button>
+  <form action="{{ url_for('download_csv') }}" method="get">
+    <button type="submit" class="download-csv-button">Download CSV</button>
+</form>
+</div>
+  <div class="div2" id="div2">
+    <h2>Salesforce Report</h2>
+  <table>
+      <tr>
+          <th>Type</th>
+          <th>Count</th>
+      </tr>
+      <tr>
+        <td>Apex Classes</td>
+        <td>{{ apex_class_count }}</td>
+      </tr>
+      <tr>
+        <td>Flows</td>
+        <td>{{ flow_count }}</td>
+      </tr>
+      <tr>
+        <td>Apex Triggers</td>
+        <td>{{ apex_trigger_count }}</td>
+      </tr>
+      <tr>
+        <td>Lightning Web Components</td>
+        <td>{{ lightning_component_count }}</td>
+      </tr> 
+      <tr>
+        <td>Custom Objects</td>
+        <td>{{ custom_object_count }}</td>
+      </tr>
+      <tr>
+        <td>Custom Permission Sets</td>
+        <td>{{ custom_permission_set_count }}</td>
+      </tr>
+      <tr>
+        <td>Custom Labels</td>
+        <td>{{ custom_labels_count }}</td>
+      </tr>
+      <tr>
+        <td>Custom tabs</td>
+        <td>{{ custom_tab_count }}</td>
+      </tr>
+      <tr>
+        <td>Roles</td>
+        <td>{{ role_count }}</td>
+      </tr>
+      <tr>
+        <td>Global Value Sets</td>
+        <td>{{ global_value_set_count }}</td>
+      </tr>
+      <tr>
+        <td>Custom Applications</td>
+        <td>{{ Custom_Application_count }}</td>
+      </tr>
+      <tr>
+        <td>Custom Notification Types</td>
+        <td>{{ Custom_Notification_Type_count }}</td>
+      </tr>
+      <tr>
+        <td>Page Layouts</td>
+        <td>{{ page_layout_count }}</td>
+      </tr>
+      <tr>
+        <td>Profiles</td>
+        <td>{{ Profile_count }}</td>
+      </tr>
+      <tr>
+        <td>WorkFlowFieldUpdates </td>
+        <td>{{ WorkFlow_FieldUpdate_count }}</td>
+      </tr>
+      <tr>
+        <td>workFlow_alerts </td>
+        <td>{{ workFlow_alert_count }}</td>
+      </tr>
+      <tr>
+        <td>ContentAssets </td>
+        <td>{{ ContentAsset_count }}</td>
+      </tr>
+      <tr>
+        <td>flexipages</td>
+        <td>{{ flexipage_count }}</td>
+      </tr>
+      <tr>
+        <td>DuplicateRules </td>
+        <td>{{ DuplicateRule_count }}</td>
+      </tr>
+      <tr>
+        <td>EmailTemplates </td>
+        <td>{{ EmailTemplate_count }}</td>
+      </tr>
+      <tr>
+        <td>ProcessBuilders </td>
+        <td>{{ ProcessDefinition_count }}</td>
+      </tr>
+      <tr>
+        <td>Queues </td>
+        <td>{{ Group_count }}</td>
+      </tr>
+      <tr>
+        <td>StaticResources </td>
+        <td>{{ StaticResource_count }}</td>
+      </tr>
+  </table>
+  </div>
+  <!-- Grid Details container -->
+  <div class="div1" id="div1">
+  <div class="inline-all-container" >
+<!-- Grid Container -->
+<div class="full-grid-container" >
+  <div class="container" style="padding-top: 20px;">
+    <div class="item">
+      <div class="item-title">Apex Classes</div>
+      <div class="item-price">{{ apex_class_count }}</div>
+      
+    </div>
+    <div class="item">
+        <div class="item-title">Flows</div>
+        <div class="item-price">{{ flow_count }}</div>
+        
+    </div>
+    <div class="item">
+        <div class="item-title">Apex Triggers</div>
+        <div class="item-price">{{ apex_trigger_count }}</div>
+        
+    </div>
+    <div class="item">
+        <div class="item-title">Lightning Web Components</div>
+        <div class="item-price">{{ lightning_component_count }}</div>
+        
+    </div>
+    </div>
+    <div class="container" style="padding-top: 20px;">
+        <div class="item">
+          <div class="item-title">Custom Objects</div>
+          <div class="item-price">{{ custom_object_count }}</div>
+          
+        </div>
+        <div class="item">
+            <div class="item-title">Custom Permission Sets</div>
+            <div class="item-price">{{ custom_permission_set_count }}</div>
+            
+        </div>
+        <div class="item">
+            <div class="item-title">Custom Labels</div>
+            <div class="item-price">{{ custom_labels_count }}</div>
+        </div>
+        <div class="item">
+            <div class="item-title">Custom tabs</div>
+            <div class="item-price">{{ custom_tab_count }}</div>
+        </div>
+        </div>
+        <div class="container" style="padding-top: 20px;">
+          <div class="item">
+            <div class="item-title">Roles</div>
+            <div class="item-price">{{ role_count }}</div>
+          </div>
+          <div class="item">
+              <div class="item-title">Global Value Sets</div>
+              <div class="item-price">{{ global_value_set_count }}</div>
+          </div>
+          <div class="item">
+              <div class="item-title">Custom Applications</div>
+              <div class="item-price">{{ Custom_Application_count }}</div>
+          </div>
+          <div class="item">
+              <div class="item-title">Custom Notification Types</div>
+              <div class="item-price">{{ Custom_Notification_Type_count }}</div>
+          </div>
+          </div>
+          <div class="container" style="padding-top: 20px;">
+            <div class="item">
+              <div class="item-title">Page Layouts</div>
+              <div class="item-price">{{ page_layout_count }}</div>
+            </div>
+            <div class="item">
+                <div class="item-title">Profiles</div>
+                <div class="item-price">{{ Profile_count }}</div>
+            </div>
+            <div class="item">
+                <div class="item-title">WorkFlow FieldUpdates</div>
+                <div class="item-price">{{ WorkFlow_FieldUpdate_count }}</div>
+            </div>
+            <div class="item">
+                <div class="item-title">WorkFlow Alerts</div>
+                <div class="item-price">{{ workFlow_alert_count }}</div>
+            </div>
+            </div>
+            <div class="container" style="padding-top: 20px;">
+              <div class="item">
+                <div class="item-title">ContentAssets</div>
+                <div class="item-price">{{ ContentAsset_count }}</div>
+              </div>
+              <div class="item">
+                  <div class="item-title">flexipages</div>
+                  <div class="item-price">{{ flexipage_count }}</div>
+              </div>
+              <div class="item">
+                  <div class="item-title">DuplicateRules</div>
+                  <div class="item-price">{{ DuplicateRule_count }}</div>
+              </div>
+              <div class="item">
+                  <div class="item-title">Email Templates</div>
+                  <div class="item-price">{{ EmailTemplate_count }}</div>
+              </div>
+              </div>
+              <div class="container" style="padding-top: 20px;">
+                <div class="item">
+                  <div class="item-title">ProcessBuilders</div>
+                  <div class="item-price">{{ ProcessDefinition_count }}</div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Queues</div>
+                    <div class="item-price">{{ Group_count }}</div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Static Resources</div>
+                    <div class="item-price">{{ StaticResource_count }}</div>
+                </div>
+                
+                </div>
+    </div>
+    <!-- grid-details-container -->
+    <div class="grid-details-container">
+      <table>
+            <thead>
+              <tr>
+                <th>Component Name</th>
+                <th>Complexity</th>
+              </tr>
+            </thead>
+            <tbody>
+               <tr>
+                <td>Account_Class</td>
+                <td>High</td>
+               </tr>
+            </tbody>
+      </table>
+     
+     
+
+    </div>
+  </div>
+</div>
+</div>
+<script src="../static/script.js"></script>
+</body>
+</html>

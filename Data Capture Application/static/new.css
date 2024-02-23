@@ -1,0 +1,238 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+}
+
+.item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 15px lightblue;
+    border-style: outset;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+.item:nth-child(odd) {
+    background-color: white;
+}
+
+.item:hover{
+    background-color: #CDF5FD;
+    transform: scale(1.1);
+    
+}
+
+.item-title {
+    height: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.item-price {
+    margin-top: 20px;
+    height: fit-content;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 55px;
+    color: #001133;
+    text-shadow: 2px 2px #080808;
+    
+}
+
+.item-button {
+    height: 15px;
+    width: 100px;
+    line-height: 15px;
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+.inline-all-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.full-grid-container{
+    height: fit-content;
+    width: 900px;
+    /* border: 2px solid #008CBA; */
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 5px;
+    
+  }
+
+.grid-details-container{
+    
+    border: solid 2px #89CFF3;
+    border-radius: 5px;
+    margin-top: 0px;
+    box-shadow: 10px 10px 15px lightblue;
+    border-style: inset;
+}
+
+.grid-button{
+    padding:10px 22px;
+    background-image: linear-gradient(#0dccea, #0d70ea);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: Montserrat,sans-serif;
+    font-size: .9em;
+    margin: 5px;
+    
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.grid-button:hover{
+    color: black;
+}
+
+.table-button:hover{
+    color: black;
+}
+
+.table-button{
+    padding:10px 22px;
+    background-image: linear-gradient(#0dccea, #0d70ea);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: Montserrat,sans-serif;
+    font-size: .9em;
+    margin: 5px;
+    
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+     touch-action: manipulation;
+}
+
+.outline-all-container{
+    border: 20px solid #89CFF3;
+    padding: 10px;
+}
+
+.item-details{
+    padding-left:10px;
+}
+
+.item-details-title{
+    margin-top: 0px;
+    background-color: #00A9FF;
+    padding: 10px;
+    color: white;
+}
+
+
+
+/* CSS */
+.div1{
+    display: block;
+    padding: 20px;
+    margin-bottom: 10px;
+    height: fit-content;
+} 
+
+.div2{
+    display: none;
+    padding: 20px;
+    margin-bottom: 10px;
+    height: fit-content;
+    
+}
+
+h2 {
+    color: #333;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    box-shadow:rgba(0, 0, 0, .3) 0 5px 10px ;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #89CFF3;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Excel-like styling */
+  td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Optional: Add some additional styling for specific columns */
+  td:nth-child(1), th:nth-child(1) {
+    min-width: 150px;
+  }
+  
+  td:nth-child(2), th:nth-child(2) {
+    min-width: 100px;
+  }
+
+.header{
+    background-color: #89CFF3;
+    padding: 20px;
+    
+}
+
+.download-csv-button{
+    padding:10px 22px;
+    background-image: linear-gradient(#0dccea, #0d70ea);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: Montserrat,sans-serif;
+    font-size: .9em;
+    margin: 5px;
+    
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-container {
+    display: flex; /* Make the container a flex container */
+    justify-content: left; /* Center the flex items horizontally */
+     /* Add some margin if needed */
+}
+
+.button-container button {
+    margin-right: 10px; /* Add some space between buttons */
+}
